@@ -1,5 +1,8 @@
 # betterposter
 
+This project was forked from https://github.com/GerkeLab/betterposter and 
+modified with a new template to be used by https://github.com/RAP-group.
+
 ### Another Better Scientific Poster Using R Markdown and pagedown
 
 <!-- badges: start -->
@@ -14,16 +17,17 @@ A better scientific poster, inspired by [Mike Morrison's Better Poster Template]
 
 ## Installation
 
-You can install the in-development version of **betterposter** from GitHub with:
+You can install the in-development, RAP-group flavor of **betterposter** from 
+GitHub with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("gerkelab/betterposter")
+remotes::install_github("rap-group/betterposter")
 ```
 
 ## Usage
 
-Use `betterposter::poster_better()` to get an awesome poster generated from R Markdown!
+Use `betterposter::poster_better()` to get an awesome poster generated from 
+R Markdown!
 
 ![](man/figures/betterposter-example.png)
 

@@ -4,9 +4,19 @@
 \alias{poster_better}
 \title{Create a Better Poster in HTML}
 \usage{
-poster_better(..., css = NULL, hero_background = NULL,
-  hero_color = NULL, qrcode = NULL, logo = NULL,
-  accent_color = NULL, mathjax = FALSE, pandoc_args = NULL)
+poster_better(
+  ...,
+  css = NULL,
+  height = NULL,
+  width = NULL,
+  hero_background = NULL,
+  hero_color = NULL,
+  qrcode = NULL,
+  logo = NULL,
+  accent_color = NULL,
+  mathjax = FALSE,
+  pandoc_args = NULL
+)
 }
 \value{
 An R Markdown output format.

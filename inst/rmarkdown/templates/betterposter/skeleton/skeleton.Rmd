@@ -2,63 +2,54 @@
 title: >
   Another Better Scientific Poster Using R Markdown and pagedown
 author:
-  - name: Garrick Aden-Buie
+  - name: Joseph V. Casillas
     affiliation: 1
     extra:
-      - "garrick@adenbuie.com"
-      - "&commat;grrrck"
-  - name: Mike Morrison
-    affiliation: 2
-  - name: Brent Thorne
-    affiliation: 3
-  - name: Yihui Xie
-    affiliation: 4
+      - "joseph.casillas@rutgers.edu"
+      - "&commat;jvcasill"
 affiliation:
-  - Gerke Lab, Moffitt Cancer Center, Tampa, FL
-  - Michigan State University
-  - Author and maintainer of [posterdown](https://github.com/brentthorne/posterdown)
-  - Author of [pagedown](https://github.com/rstudio/pagedown) and much, much more!
+  - Rutgers University
 date: "`r Sys.Date()`"
 output:
   betterposter::poster_better:
     # Optional styling arguments
-    hero_background: "#0F5D4F"
-    accent_color: "#444444"
+    hero_background: "#CC0033"
+    accent_color: "#5F6A72"
     hero_color: "#FFFFFF"
-    logo: "http://bit.ly/2UFWcbr"
+    logo: "http://bit.ly/rap_group_logo"
     # See betterposter::qrcode_options() for help
     qrcode:
-      text: "https://github.com/gadenbuie/betterposter"
+      text: "https://rap-group.github.io"
       size: "350"
-    mathjax: false
+    mathjax: true
     # Generic rmarkdown arguments
     highlight: tango
     self_contained: true
-references:
-  - id: fenner2012a
-    title: One-click science marketing
-    author:
-    - family: Fenner
-      given: Martin
-    container-title: Nature Materials
-    volume: 11
-    URL: 'http://dx.doi.org/10.1038/nmat3283'
-    DOI: 10.1038/nmat3283
-    issue: 4
-    publisher: Nature Publishing Group
-    page: 261-263
-    type: article-journal
-    issued:
-      year: 2012
-      month: 3
+bibliography: bibliography.bib
+csl: apa.csl
 ---
 
-```{css echo=FALSE}
+```{css echo=F}
 /* Adjust space at top of #hero (center panel) */
 #hero {
   padding-top: 33%;
 }
 ```
+
+```{r, 'download-refs', echo=F, cache=F, warning=F, eval=F}
+library("RefManageR")
+library("here")
+
+bib_url <- "https://raw.githubusercontent.com/jvcasillas/mybib/master/publications_latex.bib"
+csl_url <- "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+
+
+download.file(bib_url, destfile = here("bibliography.bib"), method = "curl")
+download.file(csl_url, destfile = here("apa.csl"), method = "curl")
+
+bib <- ReadBib(here("bibliography.bib"), check = FALSE)
+```
+
 
 
 <div id="hero">
@@ -73,7 +64,6 @@ references:
 
 *Additional text and content can be added here if you really want.*
 
-
 </div>
 
 
@@ -81,52 +71,55 @@ references:
 <div id="left-bar">
 <!-- Text in the left bar, title and authors added automatically -->
 
-## Abstract
+## Background and motivation
 
-In recent years, much research has been devoted to the emulation of DHCP; on the other hand, few have explored the construction of journaling file systems.
-The inability to effect complexity theory of this has been encouraging. The notion that cryptographers synchronize with game-theoretic configurations is largely adamantly opposed [@fenner2012a].
+Write a brief description of what your study is about here. 
+This should succinctly summarize important studies/findings and let your 
+reader know the important details of the previous literature that 
+motivate your study. 
+You can cite references directly [@CasillasSimonet_jphon2018].
+
+## Research Questions
+
+1. It is a good idea to directly state the research questions
+2. And/or hypotheses your work will address
 
 
-## Methods
+## Method and materials
 
-1. IPv6 can be made autonomous, concurrent, and client-server
+Describe the materials used to conduct your research. 
+This should include: participants, tasks, stimuli, etc. 
+You can add/edit the subsections as necessary. 
+Use images if possible. 
 
-2. 7-month-long trace showing that our design is feasible
+### Participants
 
-3. Suffix trees and the Ethernet are entirely incompatible.
+- Native (simultaneous) bilinguals (n = 10)
+- Adult immersion learners (n = 10) 
 
-4. Model for our methodology:
-    - fiber-optic cables
-    - simulated annealing
-    - superblocks
-    - multicast algorithms
+### Tasks
 
-## Implementation
+- Delayed repetition ("Gato es la palabra")
+- Picture naming (<font color="#CC0033">↑</font>︎semantic processing)
 
-After several days of difficult implementing, we finally have a working implementation of our heuristic.
-BEVY is composed of a **hacked operating system**, a codebase of **61** Lisp files, and a **hand-optimized compiler**.
 
-![](https://upload.wikimedia.org/wikipedia/commons/f/fa/Conventional_ETL_Diagram.jpg)
 
-## Evaluation
+## Analysis
 
-Is it possible to justify having paid little attention to our implementation and experimental setup? 
-Yes, but only in theory. 
+Give details about the type of analyses you conducted. 
+This can include important formula and/or `r` code. 
 
-We ran four novel experiments: 
+`SPE ~ group * task + (1 + task | id)`
 
-1. Deployed 35 Macintosh SEs underwater and compared our suffix trees accordingly
-2. Compared effective time since 1967 on the Sprite, L4 and Multics operating systems
-3. Measured _tape drive throughput_ as a function of _hard disk space_ on an `Apple ][`
-4. Deployed 36 `Apple ][`es across the 100-node network and tested again
+$$\hat{y} = \alpha_{0} + \beta_{1} + \epsilon$$
+
 
 ## Results
 
-In conclusion, in our research we described **BEVY**, a novel heuristic for the analysis of link-level acknowledgements. 
-We proved that simplicity in our heuristic is not a question. 
-Our framework for developing the analysis of thin clients is famously excellent.
-
-This text brought to you by [SCIgen](https://pdos.csail.mit.edu/archive/scigen/), an Automatic CS Paper Generator.
+- Summarize the main findings in a few bullet points
+- Ideally they should be brief and to the point
+- Mention what the results means re: your research questions
+- Use the hero bar for the 'take home' message
 
 </div>
 
@@ -139,19 +132,18 @@ This text brought to you by [SCIgen](https://pdos.csail.mit.edu/archive/scigen/)
 
 ## Cars are fast
 
-```{r eval=TRUE, echo=TRUE, warning=FALSE, message=FALSE}
+```{r eval=T, echo=F, warning=F, message=F}
 library(dplyr)
 library(ggplot2)
 
-mtcars %>%
-  skimr::skim_to_wide() %>%
-  select(variable, n, mean, sd, p0, p50, p100) %>%
+mtcars %>% 
+  slice(1:10) %>% 
   knitr::kable(format = "html")
 ```
 
 ## Flowers are pretty
 
-```{r, fig.width=6, fig.height = 3, out.width="100%"}
+```{r, echo=F, fig.width=6, fig.height = 3, out.width="100%"}
 ggplot(iris) +
   aes(Petal.Length, Petal.Width, color = Species) +
   geom_point()
@@ -159,7 +151,7 @@ ggplot(iris) +
 
 ## Starwars has characters
 
-```{r echo=TRUE}
+```{r echo=F}
 starwars %>%
   mutate(n_films = sapply(films, length)) %>%
   select(name, hair_color, height, species, n_films) %>%
@@ -172,16 +164,14 @@ starwars %>%
 
 ## Heavy cars are inefficient
 
-```{r, fig.width=6, fig.height = 3, out.width="100%"}
-ggplot(mtcars) +
-  aes(wt, mpg) +
+```{r, echo=F, fig.width=6, fig.height = 4, out.width="100%", message=F}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_smooth(method = "lm") +
   geom_point() +
   labs(title = "Something something cars",
        subtitle = "A boring regression",
        caption = "Source: {mtcars} of course",
-       x = "Weight of the car",
-       y = "Fuel efficiency (mpg)")
+       x = "Weight", y = "mpg")
 ```
 
 </div>
